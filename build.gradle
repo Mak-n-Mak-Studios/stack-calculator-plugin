@@ -16,6 +16,12 @@ java {
 	targetCompatibility = 'VERSION_1_8'
 }
 
+eclipse {
+	classpath {
+		downloadJavadoc = true
+	}
+}
+
 sourceSets {
 	main.java.srcDirs = ['src']
 }
