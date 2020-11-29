@@ -112,7 +112,7 @@ public class CommandStackCalculate implements TabExecutor {
 	
 	/**
 	 * Tries to parse the item ID/max stack count as an integer. Will be an integer if the item ID/max stack count refers to a max stack count.
-	 * @param itemIDOrMaxCount
+	 * @param itemIDOrMaxCount Item ID or max stack count.
 	 * @return An empty {@link OptionalInt} or an {@link OptionalInt} referring to the max stack count.
 	 */
 	private OptionalInt parseItemIDOrMaxCount( String itemIDOrMaxCount ) {
