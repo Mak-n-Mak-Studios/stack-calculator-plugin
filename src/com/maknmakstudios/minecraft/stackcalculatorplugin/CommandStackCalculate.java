@@ -15,7 +15,7 @@ import org.bukkit.command.TabExecutor;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * The class that handles the /stackcalc (/stc) command.
+ * The class that handles the /stackcalculate (/stackcalc | /stc) command.
  * @author Mak 'n Mak Studios
  */
 public class CommandStackCalculate implements TabExecutor {

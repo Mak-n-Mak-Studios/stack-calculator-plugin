@@ -20,10 +20,10 @@ import org.bukkit.plugin.java.annotation.plugin.author.Author;
 @Author( "Mak 'n Mak Studios" )
 @Commands( {
 	@Command(
-		name = "stackcalc",
+		name = "stackcalculate",
 		desc = "Puts into chat how many stacks of an item are in a certain number of items.",
-		aliases = { "stc" },
-		permission = "stackcalculatorplugin.stackcalc",
+		aliases = { "stackcalc", "stc" },
+		permission = "stackcalculatorplugin.stackcalculate",
 		permissionMessage = "You do not have permission to use this command.",
 		usage = "Usage: /<command> <amount> [itemID | maxStackCount]"
 	)
@@ -35,13 +35,13 @@ import org.bukkit.plugin.java.annotation.plugin.author.Author;
 		defaultValue = PermissionDefault.TRUE,
 		children = {
 			@ChildPermission(
-				name = "stackcalculatorplugin.stackcalc"
+				name = "stackcalculatorplugin.stackcalculate"
 			)
 		}
 	),
 	@Permission(
-		name = "stackcalculatorplugin.stackcalc",
-		desc = "Allows the usage of /stackcalc (/stc).",
+		name = "stackcalculatorplugin.stackcalculate",
+		desc = "Allows the usage of /stackcalculate (/stackcalc | /stc).",
 		defaultValue = PermissionDefault.TRUE
 	)
 } )
@@ -55,6 +55,6 @@ public class StackCalculatorPlugin extends JavaPlugin {
 	 * Registers commands upon plugin initialization.
 	 */
 	public void registerCommands( ) {
-		getCommand( "stackcalc" ).setExecutor( new CommandStackCalculate( ) );
+		getCommand( "stackcalculate" ).setExecutor( new CommandStackCalculate( ) );
 	}
 }
