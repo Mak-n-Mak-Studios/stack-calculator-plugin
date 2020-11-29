@@ -14,9 +14,19 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * The class that handles the /stackcalc (/stc) command.
+ * @author Mak 'n Mak Studios
+ */
 public class CommandStackCalculate implements TabExecutor {
+	/**
+	 * A set that contains all item IDs in Minecraft.
+	 */
 	private Set<String> allItemIDs;
 	
+	/**
+	 * Initializes the instance fields for {@link CommandStackCalculate}.
+	 */
 	public CommandStackCalculate( ) {
 		allItemIDs = Arrays.stream( Material.values( ) )
 				.map( material -> "minecraft:" + material.toString( ).toLowerCase( ) )
@@ -100,6 +110,11 @@ public class CommandStackCalculate implements TabExecutor {
 		return Collections.emptyList( );
 	}
 	
+	/**
+	 * Tries to parse the item ID/max stack count as an integer. Will be an integer if the item ID/max stack count refers to a max stack count.
+	 * @param itemIDOrMaxCount
+	 * @return An empty {@link OptionalInt} or an {@link OptionalInt} referring to the max stack count.
+	 */
 	private OptionalInt parseItemIDOrMaxCount( String itemIDOrMaxCount ) {
 		try {
 			return OptionalInt.of( Integer.parseInt( itemIDOrMaxCount ) );

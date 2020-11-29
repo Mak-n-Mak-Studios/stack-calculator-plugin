@@ -11,6 +11,10 @@ import org.bukkit.plugin.java.annotation.plugin.Description;
 import org.bukkit.plugin.java.annotation.plugin.Plugin;
 import org.bukkit.plugin.java.annotation.plugin.author.Author;
 
+/**
+ * The main plugin class.
+ * @author Mak 'n Mak Studios
+ */
 @Plugin( name = "StackCalculatorPlugin", version = "1.0.0" )
 @Description( "A plugin that tells the player how many stacks of an item are in a certain number of items." )
 @Author( "Mak 'n Mak Studios" )
@@ -41,13 +45,15 @@ import org.bukkit.plugin.java.annotation.plugin.author.Author;
 		defaultValue = PermissionDefault.TRUE
 	)
 } )
-
 public class StackCalculatorPlugin extends JavaPlugin {
 	@Override
 	public void onEnable( ) {
 		registerCommands( );
 	}
 	
+	/**
+	 * Registers commands upon plugin initialization.
+	 */
 	public void registerCommands( ) {
 		getCommand( "stackcalc" ).setExecutor( new CommandStackCalculate( ) );
 	}
